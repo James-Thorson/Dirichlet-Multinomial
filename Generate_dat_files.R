@@ -9,7 +9,7 @@ RootFile = "C:/Users/James.Thorson/Desktop/Project_git/Dirichlet-Multinomial/"
 SourceFile = paste0(RootFile,"R/")
 for(i in 1:length(list.files(SourceFile))) source( paste0(SourceFile,list.files(SourceFile)[i]) )
 
-Species = "hake_V3.3_explicitF"
+Species = "hake_V3.3_explicitF_V2"
 SpeciesFile = paste0(RootFile,Species,"/")
 
 Date = Sys.Date()
@@ -44,7 +44,7 @@ Record = Bootstrap_Sim_Fn( inputlist )
 # Run new estimation model
 ######################
 
-Type = c("DM","normal")[1]
+Type = c("DM","normal")[2]
 DM_data_Linenums = 225:226
 DM_data_matrix = matrix( c(-1,0.001,0,0,1,1, -1,0.001,0,0,0,0), byrow=TRUE, nrow=2)
 DM_control_Linenums = 209
