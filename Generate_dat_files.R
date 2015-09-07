@@ -33,7 +33,7 @@ MarginalAgeComp_Bootstrap_Linenums = 230:279
 # new F ramp
 Framp = c("min"=0.01, "max"=0.3)
 # Multinomial settings
-MargAgeComp_Settings = list("Type"="Multinomial", "InflationFactor"=c("Fleet_1"=1, "Fleet_2"=1))
+MargAgeComp_Settings = list("Type"="Multinomial", "InflationFactor"=c("Fleet_1"=10, "Fleet_2"=1))
 # bundle into list
 inputlist = bundlelist( c("SigmaR", "Index_Bootstrap_Linenums", "MarginalAgeComp_Bootstrap_Linenums", "Framp", "MargAgeComp_Settings") )
 
@@ -44,7 +44,7 @@ Record = Bootstrap_Sim_Fn( inputlist )
 # Run new estimation model
 ######################
 
-Type = c("DM","normal")[2]
+Type = c("DM","normal")[1]
 DM_data_Linenums = 225:226
 DM_data_matrix = matrix( c(-1,0.001,0,0,1,1, -1,0.001,0,0,0,0), byrow=TRUE, nrow=2)
 DM_control_Linenums = 209
