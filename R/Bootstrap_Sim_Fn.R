@@ -1,8 +1,9 @@
 Bootstrap_Sim_Fn = function( inputlist ){
   # inputs
-  attach( inputlist )
-  on.exit( detach(inputlist) ) 
-  
+  if(!exists("verbose")) verbose <- FALSE
+  attach( inputlist, warn.conflicts = verbose )
+  on.exit( detach(inputlist) )
+
   # Move files to new directory
   file.copy( from=paste0(SpeciesFile,list.files(SpeciesFile)), to=paste0(RepFile,list.files(SpeciesFile)), overwrite=TRUE)
 
@@ -22,14 +23,17 @@ Bootstrap_Sim_Fn = function( inputlist ){
   write.table( Par, file=paste0(RepFile,"ss3.par"), row.names=FALSE, col.names=FALSE)
 
   # Change starter file
-  Starter = SS_readstarter( file=paste0(RepFile,"starter.ss"))
+  Starter = SS_readstarter( file=paste0(RepFile,"starter.ss"),
+    verbose = verbose)
   Starter[['init_values_src']] = 1
   Starter[['N_bootstraps']] = 2
-  SS_writestarter( mylist=Starter, dir=RepFile, overwrite=TRUE, verbose=FALSE)
+  SS_writestarter( mylist=Starter, dir=RepFile, overwrite=TRUE,
+    verbose=verbose, warn = verbose)
 
   # Run first time
   setwd( RepFile )
-  shell( "ss3.exe -maxfn 0 -nohess")
+  shellout <- shell( "ss3.exe -maxfn 0 -nohess", intern = !verbose)
+  if (verbose) print(shellout); flush.console()
 
   # Write bootstrap simulation to data file
   Lines = readLines( paste0(RepFile,"data.ss_new") )
@@ -62,16 +66,20 @@ Bootstrap_Sim_Fn = function( inputlist ){
     Lines[i] = paste(NewLine, collapse=" ")
   }
   writeLines( text=Lines, paste0(RepFile,Starter[['datfile']]) )
-
   # Remove commenting if necessary
   Lines = readLines( paste0(RepFile,Starter[['datfile']]) )
   if( any(Lines=="#0 # N sizefreq methods to read ") ){
     Which = which(Lines=="#0 # N sizefreq methods to read ")
-    Lines[Which] = "0 # N sizefreq methods to read" 
+    Lines[Which] = "0 # N sizefreq methods to read"
   }
   writeLines( text=Lines, paste0(RepFile,Starter[['datfile']]) )
-  
+
+  # Write file with data generation info
+  info_data <- c("# Parameters controlling data generation",
+    unlist(lapply(MargAgeComp_Settings, paste, collapse = " ")))
+  writeLines(info_data, con = "info_data.txt")
+
   # Return stuff
   Return = list( "Success"=1, "TruePar"=Par )
-  return(Return)
+  invisible(Return)
 }
