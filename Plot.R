@@ -17,8 +17,8 @@ dev.off()
 ###############################################################################
 # Estimates of ESS
 ###############################################################################
-resdf$ESS1 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(Nfishery)) + 1)))^(-1))
-resdf$ESS2 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
+resdf$ESS1 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
+resdf$ESS2 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(Nfishery)) + 1)))^(-1))
 png(filename = paste0(ResultsFD, "/ESS_inflation.png"), res = resolution,
     width = width, height = height)
 boxplot(ESS2 ~ Nfishery, data = resdf, las = 1,
