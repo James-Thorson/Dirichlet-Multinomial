@@ -3,13 +3,13 @@
 #_data_and_control_files: 2015hake_data.SS // 2015hake_control.SS
 #_SS-V3.30a-safe;_05/25/2015;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.2
 1  #_N_Growth_Patterns
-1 #_N_platoons_Within_GrowthPattern 
+1 #_N_platoons_Within_GrowthPattern
 #_Cond 1 #_Morph_between/within_stdev_ratio (no read if N_morphs=1)
 #_Cond  1 #vector_Morphdist_(-1_in_first_val_gives_normal_approx)
 #
 1 # recr_dist_method for parameters:  1=like 3.24; 2=main effects for GP, Settle timing, Area; 3=each Settle entity; 4=none when N_GP*Nsettle*pop==1
 1 # Recruitment: 1=global; 2=by area
-1 #  number of recruitment settlement assignments 
+1 #  number of recruitment settlement assignments
 0 # year_x_area_x_settlement_event interaction requested (only for recr_dist_method=1)
 #GPat month  area (for each settlement assignment)
  1 1 1
@@ -19,10 +19,10 @@
 #_Cond 1 1 1 2 4 10 # example move definition for seas=1, morph=1, source=1 dest=2, age1=4, age2=10
 #
 0 #_Nblock_Patterns
-#_Cond 0 #_blocks_per_pattern 
+#_Cond 0 #_blocks_per_pattern
 # begin and end years of blocks
 #
-0.5 #_fracfemale 
+0.5 #_fracfemale
 0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate
   #_no additional input for selected M option; read 1P per morph
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_speciific_K; 4=not implemented
@@ -63,7 +63,7 @@
 #_Cond 0  #custom_MG-block_setup (0/1)
 #_LO HI INIT PRIOR PR_type SD PHASE
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no MG-block parameters
-#_Cond No MG parm trends 
+#_Cond No MG parm trends
 #
 #_seasonal_effects_on_biology_parms
  0 0 0 0 0 0 0 0 0 0 #_femwtlen1,femwtlen2,mat1,mat2,fec1,fec2,Malewtlen1,malewtlen2,L1,K
@@ -72,7 +72,7 @@
 #
 # standard error parameters for MG devs
  0.0125 0.2 0.05 0.05 0 0.25 -5 # NatM_p_1_Fem_GP_1_dev_se
- 0 0.99 0 0.2 0 0.2 -5 # NatM_p_1_Fem_GP_1_dev_rho # 
+ 0 0.99 0 0.2 0 0.2 -5 # NatM_p_1_Fem_GP_1_dev_rho #
  # 1 2003 0 # NatM_p_1_Fem_GP_1_DEVadd_2003
  # 1 2004 0 # NatM_p_1_Fem_GP_1_DEVadd_2004
  # 1 2005 0 # NatM_p_1_Fem_GP_1_DEVadd_2005
@@ -97,7 +97,7 @@
 1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
 1970 # first year of main recr_devs; early devs can preceed this era
 2010 # last year of main recr_devs; forecast devs start in following year
-1 #_recdev phase 
+1 #_recdev phase
 1 # (0/1) to read 13 advanced options
  1946 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
  3 #_recdev_early_phase
@@ -123,7 +123,7 @@
 #  -0.376155 -0.116965 -0.141517 -0.170471 -0.20434 -0.243627 -0.288531 -0.340747 -0.398357 -0.459251 -0.52594 -0.59455 -0.664121 -0.733427 -0.795878 -0.84012 -0.850721 -0.819652 -0.728066 -0.520467 -0.245605 0.484846 0.334195 -0.226831 1.72008 -0.197705 -0.726253 1.30994 -0.887193 0.0969198 -1.05558 1.46347 -1.28746 -0.125508 2.64745 -1.17425 -1.42716 -0.918323 2.3847 -1.63987 -1.59278 1.51862 0.562883 -1.74619 1.33758 -0.57134 -1.65656 1.07718 0.883677 0.194622 0.415833 -0.0185293 0.519089 2.32972 -1.00602 -0.238632 -2.64414 0.217059 -2.61406 0.745739 0.493419 -3.04047 1.74436 0.243358 2.66234 -0.725026 0.311272 -0.227299 0 0 0 0
 # implementation error by year in forecast:  0 0 0
 #
-#Fishing Mortality info 
+#Fishing Mortality info
 0.1 # F ballpark
 -1999 # F ballpark year (neg value to disable)
 2 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
@@ -206,25 +206,25 @@
  -5 9 0 -1 -1 0.01 -2 0 0 0 0 0 0 0 # AgeSel_P19_Acoustic_Survey(2)
  -5 9 0 -1 -1 0.01 -2 0 0 0 0 0 0 0 # AgeSel_P20_Acoustic_Survey(2)
  -5 9 0 -1 -1 0.01 -2 0 0 0 0 0 0 0 # AgeSel_P21_Acoustic_Survey(2)
-# -5 30 0 0 -1 0.01  2 0 0 0 0 0 0 0 # ln(EffN_mult)_1
-# -5 30 0 0 -1 0.01  2 0 0 0 0 0 0 0 # ln(EffN_mult)_1
+# -10 5 0 0 -1 0.01  2 0 0 0 0 0 0 0 # ln(EffN_mult)_1
+# -10 5 0 0 -1 0.01  2 0 0 0 0 0 0 0 # ln(EffN_mult)_1
 
-#_Cond 0 #_custom_sel-env_setup (0/1) 
+#_Cond 0 #_custom_sel-env_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no enviro fxns
-#_Cond 0 #_custom_sel-blk_setup (0/1) 
+#_Cond 0 #_custom_sel-blk_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no block usage
-#_Cond No selex parm trends 
+#_Cond No selex parm trends
 # standard error parameters for selparm devs
 # 0.0075 0.12 0.03 0.03 0 0.25 -5 # AgeSel_P3_Fishery(1)_dev_se
-# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P3_Fishery(1)_dev_rho # 
+# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P3_Fishery(1)_dev_rho #
 # 0.0075 0.12 0.03 0.03 0 0.25 -5 # AgeSel_P4_Fishery(1)_dev_se
-# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P4_Fishery(1)_dev_rho # 
+# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P4_Fishery(1)_dev_rho #
 # 0.0075 0.12 0.03 0.03 0 0.25 -5 # AgeSel_P5_Fishery(1)_dev_se
-# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P5_Fishery(1)_dev_rho # 
+# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P5_Fishery(1)_dev_rho #
 # 0.0075 0.12 0.03 0.03 0 0.25 -5 # AgeSel_P6_Fishery(1)_dev_se
-# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P6_Fishery(1)_dev_rho # 
+# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P6_Fishery(1)_dev_rho #
 # 0.0075 0.12 0.03 0.03 0 0.25 -5 # AgeSel_P7_Fishery(1)_dev_se
-# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P7_Fishery(1)_dev_rho # 
+# 0 0.99 0 0.2 0 0.2 -5 # AgeSel_P7_Fishery(1)_dev_rho #
 # 3.82112e-005 # AgeSel_P3_Fishery(1)_DEVadd_1991
 # 8.8721e-007 # AgeSel_P3_Fishery(1)_DEVadd_1992
 # 1.5984e-006 # AgeSel_P3_Fishery(1)_DEVadd_1993
@@ -353,7 +353,7 @@
 #_Cond -6 6 1 1 2 0.01 -4 0 0 0 0 0 0 0  #_placeholder if no parameters
 #
 1 #_Variance_adjustments_to_input_values
-#_fleet: 1 2 
+#_fleet: 1 2
   0 0 #_add_to_survey_CV
   0 0 #_add_to_discard_stddev
   0 0 #_add_to_bodywt_CV
@@ -366,7 +366,7 @@
 1 #_sd_offset
 #
 0 # number of changes to make to default Lambdas (default value is 1.0)
-# Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 9=init_equ_catch; 
+# Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 9=init_equ_catch;
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin; 17=F_ballpark
 #like_comp fleet/survey  phase  value  sizefreq_method
 #
@@ -381,7 +381,7 @@
 #  1 #_parameter-dev-vectors
 #  1 #_crashPenLambda
 #  0 # F_ballpark_lambda
-1 # (0/1) read specs for more stddev reporting 
+1 # (0/1) read specs for more stddev reporting
  2 2 -1 15 1 1 1 -1 1 # selex type, len/age, year, N selex bins, Growth pattern, N growth ages, NatAge_area(-1 for all), NatAge_yr, N Natages
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # vector with selex std bin picks (-1 in first bin to self-generate)
  -1 # vector with growth std bin picks (-1 in first bin to self-generate)
