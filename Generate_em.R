@@ -38,13 +38,29 @@ for(RepI in replicates) {
       inputlist = bundlelist(c("Type"))
     } # End MN switch
     if (Type == "ES") {
-
+      inputlist = bundlelist(c("Type"))
     } # End ES switch
 
     # Run the model
     Build_EM_Fn(inputlist, folder = paste0(RepFile, Type, "/"))
     setwd(paste0(RepFile, Type))
     shellout <- shell( "ss3.exe", intern = !verbose )
+
+    # Run EM again after tuned
+    if (Type == "ES") {
+      tunewrite <- list()
+      for (iter in 1:numtune) {
+        tuneval <- tune_info(file = "Report.sso", dir = getwd())
+        tuneval <- tuneval[, "HarEffN/MeanInputN"] * tuneval[, "Var_Adj"]
+        tunewrite[length(tunewrite) + 1)] <- tune_ctl(replace = tuneval)
+        if (iter == numtune) tunewrite[length(tunewrite) + 1)] <- tuneval
+        shellout <- shell( "ss3.exe", intern = !verbose )
+      }
+      tunewrite <- do.call("rbind", tunewrite)
+      colnames(tunewrite) <- tuneval$FleetName
+      write.csv(tunewrite, "tune.csv", row.names = FALSE)
+    } # End ES switch
+
     setwd(currwd)
   } #end of estimation methods loop
 } #end of replicate loop

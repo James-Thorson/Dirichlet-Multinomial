@@ -23,7 +23,8 @@ DM_data_matrix <- matrix(byrow = TRUE, nrow = 2,
 # MN: Multinomial
 # DM: Dirichlet parameter
 # EF: effective sample size
-Estimations <- c("MN", "DM", "EF")[1:2]
+Estimations <- c("MN", "DM", "EF")
+numtune <- 3
 
 ###############################################################################
 # Set working directory and folder structure
