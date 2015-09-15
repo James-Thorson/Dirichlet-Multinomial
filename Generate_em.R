@@ -52,8 +52,8 @@ for(RepI in replicates) {
       for (iter in 1:numtune) {
         tuneval <- tune_info(file = "Report.sso", dir = getwd())
         tuneval <- tuneval[, "HarEffN/MeanInputN"] * tuneval[, "Var_Adj"]
-        tunewrite[length(tunewrite) + 1)] <- tune_ctl(replace = tuneval)
-        if (iter == numtune) tunewrite[length(tunewrite) + 1)] <- tuneval
+        tunewrite[length(tunewrite) + 1] <- tune_ctl(replace = tuneval)
+        if (iter == numtune) tunewrite[[length(tunewrite) + 1]] <- tuneval
         shellout <- shell( "ss3.exe", intern = !verbose )
       }
       tunewrite <- do.call("rbind", tunewrite)
