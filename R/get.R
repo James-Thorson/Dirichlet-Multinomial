@@ -125,7 +125,7 @@ get_all <- function(dirroot, pattern = basename(DateFile), verbose = FALSE) {
   scenarios <- dir(dirroot, pattern = pattern)
   temp <- do.call("rbind", lapply(scenarios, get_dir, verbose = verbose))
   results <- calc_factororder(temp)
-  invisible(temp)
+  invisible(results)
 }
 
 
