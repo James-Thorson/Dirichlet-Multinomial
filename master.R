@@ -23,7 +23,7 @@ DM_data_matrix <- matrix(byrow = TRUE, nrow = 2,
 # MN: Multinomial
 # DM: Dirichlet parameter
 # EF: effective sample size
-Estimations <- c("MN", "DM", "EF")
+Estimations <- c("MN", "DM", "ES")
 numtune <- 3
 
 ###############################################################################
