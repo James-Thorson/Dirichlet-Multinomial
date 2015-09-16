@@ -11,7 +11,7 @@ height <- 700
 png(filename = paste0(ResultsFD, "/DM1_inflation.png"), res = resolution,
   width = width, height = height)
 boxplot(1/exp(lnEffN_mult_1) ~ Nfishery, data = resdf, las = 1,
-  xlab = "OM inflation factor", ylab = expression(beta))
+  xlab = "OM inflation factor", ylab = expression(theta))
 dev.off()
 
 ###############################################################################
