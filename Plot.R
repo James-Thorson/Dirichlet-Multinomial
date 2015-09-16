@@ -44,9 +44,12 @@ ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
         panel.grid.minor = element_blank(),
         strip.background = element_blank(),
         panel.border = element_rect(colour = "black"),
-        legend.position = c(0.145, 0.20)
+        legend.position = c(0.145, 0.16),
+        legend.key.height = unit(0.45, "cm"),
+        legend.title = element_text(size = 5, face = "bold"),
+        legend.text = element_text(size = 5, face = "bold")
   ) +
-  geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 3.5)
+  geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5)
 dev.off()
 
 
