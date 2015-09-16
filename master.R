@@ -11,6 +11,7 @@ replicates <- 1:100
 Species = "hake_V3.3_explicitF_V2"
 SigmaR = 0.9
 Framp = c("min"=0.01, "max"=0.3) # No burn in
+yearlyn <- c(25, 100, 400)
 
 # Levels of inflation for fishery and survey age composition samples
 inflationmatrix <- matrix(ncol = 2, byrow = FALSE,
@@ -57,6 +58,7 @@ temp <- mapply(source, list.files(paste0(RootFile, "R/"), full.names = TRUE))
 set.seed(101)
 source("Generate_data.R")
 source("Generate_em.R")
+source("Generate_species.R")
 
 ###############################################################################
 # Read results
