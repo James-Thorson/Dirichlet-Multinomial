@@ -62,6 +62,7 @@ source("Generate_em.R")
 # Read results
 ###############################################################################
 resdf <- get_all(dirroot = RootFile, pattern = basename(DateFile))
+write.csv(resdf, file.path(ResultsFD, "resdf.csv"), row.names = FALSE)
 
 ###############################################################################
 # Plot results
