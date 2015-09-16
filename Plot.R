@@ -30,7 +30,9 @@ dev.off()
 ###############################################################################
 png(filename = paste0(ResultsFD, "/R0andM_inflation.png"), res = resolution,
     width = width, height = height)
-ggplot(resdf, aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
+means <- aggregate(gradient ~ model + Nfishery, data = resdf, mean)
+means$gradient <- round(means$gradient, 4)
+ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
   geom_point(aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE, color = gradient)) +
   facet_grid(model ~ Nfishery) +
   scale_color_gradient(low='blue', high='red') +
@@ -43,7 +45,8 @@ ggplot(resdf, aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
         strip.background = element_blank(),
         panel.border = element_rect(colour = "black"),
         legend.position = c(0.145, 0.20)
-  )
+  ) +
+  geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 3.5)
 dev.off()
 
 
