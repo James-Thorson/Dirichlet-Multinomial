@@ -6,11 +6,12 @@
 #' If \code{is.null(folder)} is \code{TRUE} then \code{folder} will be set
 #' to the current \code{getwd()}.
 
-tune_ctl <- function(word = "#_mult_by_agecomp_N", folder = NULL, replace = new) {
+tune_ctl <- function(word = "#_mult_by_agecomp_N", folder = NULL, replace = new,
+  pattern = "control") {
   # get directory and filename
   if(is.null(folder)) folder <- getwd()
   folder <- gsub("/$", "", folder)
-  ctlname <- list.files(folder, pattern = "control", full.names = TRUE)
+  ctlname <- list.files(folder, pattern = pattern, full.names = TRUE)
   # read the ctl
   ctl <- readLines(ctlname)
 

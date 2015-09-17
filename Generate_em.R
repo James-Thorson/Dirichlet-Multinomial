@@ -50,11 +50,17 @@ for(RepI in replicates) {
     if (Type == "ES") {
       tunewrite <- list()
       for (iter in 1:numtune) {
+        # If the initial run failed to produce ss_new files
+        if (!file.exists("control.ss_new")) {
+          use <- "hake_330\\.ctl"
+        } else {use <- "control"}
         tuneval <- tune_info(file = "Report.sso", dir = getwd())
         names <- tuneval[, "FleetName"]
         tuneval <- tuneval[, "HarEffN/MeanInputN"] * tuneval[, "Var_Adj"]
-        tunewrite[length(tunewrite) + 1] <- tune_ctl(replace = tuneval)
-        if (iter == numtune) tunewrite[[length(tunewrite) + 1]] <- tuneval
+        tunewrite[length(tunewrite) + 1] <- tune_ctl(replace = tuneval, pattern = use)
+        if (iter == numtune) {
+          tunewrite[[length(tunewrite) + 1]] <- ifelse(tuneval > 1, 1, tuneval)
+        }
         shellout <- shell( "ss3.exe", intern = !verbose )
       }
       tunewrite <- do.call("rbind", tunewrite)
