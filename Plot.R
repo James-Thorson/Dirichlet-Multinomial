@@ -62,6 +62,8 @@ ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
         legend.text = element_text(size = 7, face = "bold")
   ) +
   labs(color = "OM yearly n") +
+  geom_hline(yintercept = 0, lty = 2) +
+  geom_vline(xintercept = 0, lty = 2) +
   geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5)
 dev.off()
 
