@@ -16,7 +16,7 @@ boxplot(1/exp(lnEffN_mult_1) ~ Nfishery + ntrue,
   xlab = "OM yearly sample size", ylab = expression(theta),
   col = colors, xaxt = "n")
 axis(1, at = c(2, 5, 8), labels = yearlyn)
-legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
+legend("topright", legend = levels(resdf$Nfishery)[-1], fill = colors,
   bty = "n", title = "Inflation factor")
 dev.off()
 
