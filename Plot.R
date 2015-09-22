@@ -44,9 +44,9 @@ png(filename = paste0(ResultsFD, "/R0andM_inflation.png"), res = resolution,
 means <- aggregate(gradient ~ model + Nfishery, data = resdf, mean)
 means$gradient <- round(means$gradient, 4)
 ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
-  geom_point(aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE, color = gradient)) +
+  geom_point(aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE, color = factor(ntrue))) +
   facet_grid(model ~ Nfishery) +
-  scale_color_gradient(low='blue', high='red') +
+  # scale_color_gradient(low='blue', high='red') +
   xlab(expression(paste(italic(ln), "(", italic(R_0), ")", sep = ""))) +
   ylab(expression(paste(italic("M")))) +
   theme_bw() +
@@ -56,10 +56,12 @@ ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
         strip.background = element_blank(),
         panel.border = element_rect(colour = "black"),
         legend.position = c(0.145, 0.16),
+        legend.key = element_rect(colour = "white"),
         legend.key.height = unit(0.45, "cm"),
-        legend.title = element_text(size = 5, face = "bold"),
-        legend.text = element_text(size = 5, face = "bold")
+        legend.title = element_text(size = 7, face = "bold"),
+        legend.text = element_text(size = 7, face = "bold")
   ) +
+  labs(color = "OM yearly n") +
   geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5)
 dev.off()
 
