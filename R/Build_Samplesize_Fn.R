@@ -3,7 +3,7 @@
 #' to have the same sample size, or a vector the same length \code{#_N_Agecomp_obs}
 #' is passed to \code{n}.
 
-Build_Samplesize_Fn <- function(folder, n) {
+Build_Samplesize_Fn <- function(folder, n, fleet = 1) {
   folder <- gsub("/$", "", folder)
   dat <- readLines(file.path(folder, "hake_330.dat"))
   line.start <- grep("#_N_Agecomp_obs", dat) + 2
@@ -16,7 +16,7 @@ Build_Samplesize_Fn <- function(folder, n) {
     temp <- x[!x == ""]
     as.numeric(temp)
     }))
-  frame[, 9] <- n
+  frame[frame[, 3] %in% fleet, 9] <- n
 
   lines <- apply(frame, 1, paste, collapse = " ")
   dat[line.start:line.end] <- lines
