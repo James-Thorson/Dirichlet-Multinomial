@@ -122,7 +122,7 @@ get_dir <- function(dirdir, verbose = FALSE) {
 # Get all folders containing replicates
 ###############################################################################
 get_all <- function(dirroot, pattern = basename(DateFile), verbose = FALSE) {
-  scenarios <- dir(dirroot, pattern = pattern)
+  scenarios <- dir(dirroot, pattern = pattern, full.names = TRUE)
   temp <- do.call("rbind", lapply(scenarios, get_dir, verbose = verbose))
   results <- calc_factororder(temp)
   invisible(results)
