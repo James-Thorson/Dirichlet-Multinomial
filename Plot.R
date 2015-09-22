@@ -10,8 +10,14 @@ height <- 700
 ###############################################################################
 png(filename = paste0(ResultsFD, "/DM1_inflation.png"), res = resolution,
   width = width, height = height)
-boxplot(1/exp(lnEffN_mult_1) ~ Nfishery, data = resdf, las = 1,
-  xlab = "OM inflation factor", ylab = expression(theta))
+colors <- gray.colors(3, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL)
+boxplot(1/exp(lnEffN_mult_1) ~ Nfishery + ntrue,
+  data = droplevels(subset(resdf, Nfishery != 1)), las = 1,
+  xlab = "OM yearly sample size", ylab = expression(theta),
+  col = colors, xaxt = "n")
+axis(1, at = c(2, 6, 10), labels = yearlyn)
+legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
+  bty = "n", title = "Inflation factor")
 dev.off()
 
 ###############################################################################
@@ -21,8 +27,13 @@ resdf$ESS1 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEf
 resdf$ESS2 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(Nfishery)) + 1)))^(-1))
 png(filename = paste0(ResultsFD, "/ESS_inflation.png"), res = resolution,
     width = width, height = height)
-boxplot(ESS2 ~ Nfishery, data = resdf, las = 1,
-  xlab = "OM inflation factor", ylab = expression(N[eff]))
+boxplot(ESS2 ~ Nfishery + ntrue,
+        data = droplevels(subset(resdf, Nfishery != 1)), las = 1,
+  xlab = "OM yearly sample size", ylab = expression(N[eff]),
+  col = colors, xaxt = "n")
+axis(1, at = c(2, 5, 8), labels = yearlyn)
+legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
+  bty = "n", title = "Inflation factor")
 dev.off()
 
 ###############################################################################
