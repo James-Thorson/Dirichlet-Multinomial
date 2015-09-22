@@ -56,7 +56,17 @@ get_results <- function(dir, type = "EM", verbose = FALSE) {
     gradient <- grep("is_final_gradient", data, value = TRUE)
     gradient <- as.numeric(strsplit(gradient, "[[:space:]]")[[1]][2])
     model <- basename(dir)
-    report <- data.frame(pars, likes, gradient, model)
+    # Get sample size information
+    topline <- grep("FIT_AGE_COMPS", data)[2] + 2
+    bottomline <- grep("Fleet N Npos", data)[2] - 2
+    nsamp <- data[topline:bottomline]
+    nsamp <- do.call("rbind", strsplit(nsamp, " "))[, 1:16]
+    mode(nsamp) <- "numeric"
+    nsamp <- mean(nsamp[nsamp[, 1] == 1, 11])
+    ntrue <- basename(dirname(dirname(dir)))
+    ntrue <- strsplit(ntrue, "_")[[1]][1]
+    ntrue <- ifelse(grepl("-", ntrue), NA, as.numeric(ntrue))
+    report <- data.frame(pars, likes, gradient, model, nsamp, ntrue)
   }
   # if OM
   if (type == "OM") {
