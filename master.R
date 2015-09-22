@@ -32,6 +32,9 @@ numtune <- 3
 ###############################################################################
 if (Sys.info()["user"] == "kelli") {
   RootFile <- "c:/SS/Dirichlet-Multinomial/"
+  if(!file.exists(file.path(RootFile))) {
+    RootFile <- "d:/SS/Dirichlet-Multinomial/"
+  }
 } else {
   RootFile = "C:/Users/James.Thorson/Desktop/Project_git/Dirichlet-Multinomial/"
 }
