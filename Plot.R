@@ -9,42 +9,34 @@ colors <- gray.colors(3, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL)
 ###############################################################################
 # Estimates of DM parameter 1
 ###############################################################################
-png(filename = paste0(ResultsFD, "/DM1_inflation.png"), res = resolution,
-  width = width, height = height)
-par( mar=c(3,3,0.5,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(0,0,0,0))
+png(filename = paste0(ResultsFD, "/Combined_simulation_results.png"), res = resolution,
+  width = 4, height = 3*2, units="in")
+par( mfrow=c(2,1), mar=c(1,3,0.5,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(2,0,0,0))
+# Panel 1 -- estimates of parameter
 boxplot(1/exp(lnEffN_mult_1) ~ Nfishery + ntrue,
   data = droplevels(subset(resdf, Nfishery != 1)),
-  xlab = "OM yearly sample size", ylab = expression(theta),
+  xlab = "", ylab = expression(theta),
   col = colors, xaxt = "n")
-axis(1, at = c(2, 5, 8), labels = yearlyn)
-legend("topright", legend = levels(resdf$Nfishery)[-1], fill = colors,
-  bty = "n", title = "Inflation factor")
-dev.off()
-
-###############################################################################
-# Estimates of ESS
-###############################################################################
-resdf$ESS1 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
-resdf$ESS2 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(nsamp)) + 1)))^(-1))
-png(filename = paste0(ResultsFD, "/ESS_inflation.png"), res = resolution,
-    width = width, height = height)
-par( mar=c(3,3,0.5,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(0,0,0,0))
+axis(1, at = c(2, 5, 8), labels = rep("",3))
+# Panel 2 -- 
 boxplot(ESS2 ~ Nfishery + ntrue,
         data = droplevels(subset(resdf, Nfishery != 1)),
-  xlab = "OM yearly sample size", ylab = expression(N[eff]),
+  xlab = "", ylab = expression(N[eff]),
   col = colors, xaxt = "n")
 axis(1, at = c(2, 5, 8), labels = yearlyn)
 legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
-  bty = "n", title = "True sample size")
+  bty = "n", title = "Inflation factor")
+mtext( side=1, outer=FALSE, line=1.75, text="True annual sample size")
 dev.off()
 
 ###############################################################################
 # Correlated error in R_0 and M
 ###############################################################################
 library(ggplot2)
+levels(resdf$model) = c("M-I","unweighted","D-M")
 gradientfilter <- 0.1
 png(filename = paste0(ResultsFD, "/R0andM_inflation.png"), res = resolution,
-    width = width, height = height)
+    width = 1.9*4, height = 1.9*3, units="in")
 par( mar=c(3,3,0.5,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(0,0,0,0))
 means <- aggregate(gradient ~ model + Nfishery, data = resdf, mean)
 means$gradient <- round(means$gradient, 4)
@@ -70,7 +62,7 @@ ggplot(subset(resdf, gradient < gradientfilter),
         legend.title = element_text(size = 7, face = "bold"),
         legend.text = element_text(size = 7, face = "bold")
   ) +
-  labs(color = "OM yearly n") +
+  labs(color = "True annual sample size") +
   geom_hline(yintercept = 0, lty = 2) +
   geom_vline(xintercept = 0, lty = 2) +
   # geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5) +
