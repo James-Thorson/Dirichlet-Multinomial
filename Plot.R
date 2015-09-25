@@ -32,7 +32,7 @@ boxplot(ESS2 ~ Nfishery + ntrue,
   xlab = "OM yearly sample size", ylab = expression(N[eff]),
   col = colors, xaxt = "n")
 axis(1, at = c(2, 5, 8), labels = yearlyn)
-legend("topleft", legend = sort(unique(resdf$Nfishery))[-1], fill = colors,
+legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
   bty = "n", title = "True sample size")
 dev.off()
 
