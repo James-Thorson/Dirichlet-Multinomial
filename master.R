@@ -68,7 +68,7 @@ source("Generate_species.R")
 ###############################################################################
 resdf <- get_all(dirroot = RootFile, pattern = basename(DateFile))
 write.csv(resdf, file.path(ResultsFD, "resdf.csv"), row.names = FALSE)
-save(resdf, file.path(ResultsFD, "resdf.RData"), row.names = FALSE)
+save(resdf, file = file.path(ResultsFD, "resdf.RData"))
 
 ###############################################################################
 # Plot results
