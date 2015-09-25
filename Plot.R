@@ -39,11 +39,17 @@ dev.off()
 ###############################################################################
 # Correlated error in R_0 and M
 ###############################################################################
+gradientfilter <- 0.1
 png(filename = paste0(ResultsFD, "/R0andM_inflation.png"), res = resolution,
     width = width, height = height)
 means <- aggregate(gradient ~ model + Nfishery, data = resdf, mean)
 means$gradient <- round(means$gradient, 4)
-ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
+lengths <- aggregate(gradient ~ model + Nfishery,
+  data = subset(resdf, gradient < gradientfilter), length)
+letterlab <- means
+letterlab$gradient <- paste0("(", letters[1:11], ")")
+ggplot(subset(resdf, gradient < gradientfilter),
+       aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
   geom_point(aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE, color = factor(ntrue))) +
   facet_grid(model ~ Nfishery) +
   # scale_color_gradient(low='blue', high='red') +
@@ -57,14 +63,13 @@ ggplot(subset(resdf, gradient < 1), aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
         panel.border = element_rect(colour = "black"),
         legend.position = c(0.145, 0.16),
         legend.key = element_rect(colour = "white"),
-        legend.key.height = unit(0.45, "cm"),
         legend.title = element_text(size = 7, face = "bold"),
         legend.text = element_text(size = 7, face = "bold")
   ) +
   labs(color = "OM yearly n") +
   geom_hline(yintercept = 0, lty = 2) +
   geom_vline(xintercept = 0, lty = 2) +
-  geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5)
+  # geom_text(data = means, aes(label = gradient, x = -0.05, y = 0.65), size = 2.5) +
+  geom_text(data = lengths, aes(label = gradient, x = -0.05, y = 0.85), size = 2.5) +
+  geom_text(data = letterlab, aes(label = gradient, x = -0.1, y = 0.85), size = 2.5)
 dev.off()
-
-
