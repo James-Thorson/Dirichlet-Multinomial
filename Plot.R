@@ -4,13 +4,13 @@
 resolution <- 150
 width <- 700
 height <- 700
+colors <- gray.colors(3, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL)
 
 ###############################################################################
 # Estimates of DM parameter 1
 ###############################################################################
 png(filename = paste0(ResultsFD, "/DM1_inflation.png"), res = resolution,
   width = width, height = height)
-colors <- gray.colors(3, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL)
 boxplot(1/exp(lnEffN_mult_1) ~ Nfishery + ntrue,
   data = droplevels(subset(resdf, Nfishery != 1)), las = 1,
   xlab = "OM yearly sample size", ylab = expression(theta),
@@ -23,8 +23,8 @@ dev.off()
 ###############################################################################
 # Estimates of ESS
 ###############################################################################
-resdf$ESS1 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
-resdf$ESS2 <- with(resdf, ((1/as.numeric(as.character(Nfishery))) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(Nfishery)) + 1)))^(-1))
+resdf$ESS1 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
+resdf$ESS2 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(nsamp)) + 1)))^(-1))
 png(filename = paste0(ResultsFD, "/ESS_inflation.png"), res = resolution,
     width = width, height = height)
 boxplot(ESS2 ~ Nfishery + ntrue,
@@ -32,8 +32,8 @@ boxplot(ESS2 ~ Nfishery + ntrue,
   xlab = "OM yearly sample size", ylab = expression(N[eff]),
   col = colors, xaxt = "n")
 axis(1, at = c(2, 5, 8), labels = yearlyn)
-legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
-  bty = "n", title = "Inflation factor")
+legend("topleft", legend = sort(unique(resdf$Nfishery))[-1], fill = colors,
+  bty = "n", title = "True sample size")
 dev.off()
 
 ###############################################################################

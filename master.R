@@ -72,4 +72,5 @@ write.csv(resdf, file.path(ResultsFD, "resdf.csv"), row.names = FALSE)
 ###############################################################################
 # Plot results
 ###############################################################################
+#resdf = read.csv(file.path(ResultsFD, "resdf.csv"))
 source("Plot.R")
