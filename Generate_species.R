@@ -4,7 +4,7 @@
 keep.DateFile <- DateFile
 keep.Species <- Species
 keep.SpeciesFile <- SpeciesFile
-base <- paste0(RootFile, "hake_V3.3_explicitF_V3", "/")
+base <- paste0(RootFile, keep.Species, "/")
 
 ###############################################################################
 # Generate new species for each level of sample size
@@ -13,7 +13,7 @@ for(samps in yearlyn) {
   DateFile <- file.path(dirname(DateFile),
     paste0(samps, "_", basename(DateFile)))
 
-  Species <- paste0("hake_V3.3_explicitF_V", samps)
+  Species <- paste0(gsub("[[:digit:]]$", "", keep.Species), samps)
   SpeciesFile <- paste0(RootFile, Species,"/")
   dir.create(SpeciesFile, showWarnings = verbose)
 

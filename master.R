@@ -8,7 +8,7 @@
 ###############################################################################
 verbose <- FALSE
 replicates <- 1:100
-Species = "hake_V3.3_explicitF_V2"
+Species = "hake_V3.3_explicitF_V4"
 SigmaR = 0.9
 Framp = c("min"=0.01, "max"=0.3) # No burn in
 yearlyn <- c(25, 100, 400)
