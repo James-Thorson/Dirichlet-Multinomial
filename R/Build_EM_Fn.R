@@ -5,7 +5,7 @@ Build_EM_Fn = function( inputlist, folder = RepFile ){
   on.exit( detach(inputlist) )
 
   # Stop if running for first time
-  if( is.null(Index_Bootstrap_Linenums) | is.null(MarginalAgeComp_Bootstrap_Linenums) ){
+  if (is.null(Index_Bootstrap_Linenums)){
     print("Stop and inspect datfile for linenums")
     return()
   }
