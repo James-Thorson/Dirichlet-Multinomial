@@ -2,7 +2,6 @@
 # Specify linenums IN BOOTSTRAP FILE (use NULL to find this out originally)
 ###############################################################################
 Index_Bootstrap_Linenums = 82:100
-MarginalAgeComp_Bootstrap_Linenums = 230:279
 
 ###############################################################################
 # Generate new replicated data set for each replicate
@@ -24,7 +23,6 @@ for(mat in 1:NROW(inflationmatrix)) {
     inputlist = bundlelist(c(
       "SigmaR",
       "Index_Bootstrap_Linenums",
-      "MarginalAgeComp_Bootstrap_Linenums",
       "Framp",
       "MargAgeComp_Settings"))
 

@@ -41,7 +41,7 @@ Bootstrap_Sim_Fn = function( inputlist ){
   writeLines(text=Lines, con=paste0(RepFile,Starter[['datfile']]))
 
   # Stop if running for first time
-  if( is.null(Index_Bootstrap_Linenums) | is.null(MarginalAgeComp_Bootstrap_Linenums) ){
+  if (is.null(Index_Bootstrap_Linenums)){
     print("Stop and inspect bootstrap datfile for linenums")
     return()
   }
@@ -57,7 +57,11 @@ Bootstrap_Sim_Fn = function( inputlist ){
 
   # Simulate new age-comps
   Lines = readLines( paste0(RepFile,Starter[['datfile']]) )
-  for(i in MarginalAgeComp_Bootstrap_Linenums){
+  # Find where in dat file the age data is
+  agestartline <- grep("#_yr month fleet gender part ageerr Lbin_lo", Lines) + 1
+  ageendline <- grep("#_N_MeanSize-at-Age_obs", Lines) - 1
+  while (grepl("#$", Lines[ageendline])) ageendline <- ageendline - 1
+  for(i in agestartline:ageendline){
     NewLine = na.omit(as.numeric(strsplit( Lines[i]," ")[[1]]))
     if( MargAgeComp_Settings[["Type"]]=="Multinomial"){
       NewLine[-c(1:9)] = rmultinom(n=1, size=NewLine[9], prob=NewLine[-c(1:9)])[,1]
