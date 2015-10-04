@@ -25,7 +25,7 @@ DM_data_matrix <- matrix(byrow = TRUE, nrow = 2,
 # DM: Dirichlet parameter
 # EF: effective sample size
 Estimations <- c("MN", "DM", "ES")
-numtune <- 3
+numtune <- 2
 
 ###############################################################################
 # Set working directory and folder structure
