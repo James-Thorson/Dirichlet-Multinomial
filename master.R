@@ -60,7 +60,6 @@ temp <- mapply(source, list.files(paste0(RootFile, "R/"), full.names = TRUE))
 ###############################################################################
 set.seed(101)
 source("Generate_data.R")
-source("Generate_em.R")
 source("Generate_species.R")
 
 ###############################################################################
