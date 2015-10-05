@@ -1,9 +1,4 @@
 ###############################################################################
-# Specify linenums IN BOOTSTRAP FILE (use NULL to find this out originally)
-###############################################################################
-Index_Bootstrap_Linenums = 82:100
-
-###############################################################################
 # Generate new replicated data set for each replicate
 ###############################################################################
 for(mat in 1:NROW(inflationmatrix)) {
@@ -22,7 +17,6 @@ for(mat in 1:NROW(inflationmatrix)) {
       "InflationFactor"=c("Fleet_1"=inflation[1], "Fleet_2"=inflation[2]))
     inputlist = bundlelist(c(
       "SigmaR",
-      "Index_Bootstrap_Linenums",
       "Framp",
       "MargAgeComp_Settings"))
 

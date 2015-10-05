@@ -1,10 +1,4 @@
 ###############################################################################
-# Specify linenums IN BOOTSTRAP FILE (use NULL to find this out originally)
-###############################################################################
-DM_data_Linenums = 225:226
-DM_control_Linenums = 209
-
-###############################################################################
 # Generate folders with files for each type of EM
 ###############################################################################
 currwd <- getwd()
@@ -32,7 +26,7 @@ for(RepI in replicates) {
 
     #Create each specific EM
     if (Type == "DM") {
-      inputlist = bundlelist(c("Type","DM_data_Linenums","DM_data_matrix","DM_control_Linenums"))
+      inputlist = bundlelist(c("Type","DM_data_matrix"))
     } # End DM switch
     if (Type == "MN") {
       inputlist = bundlelist(c("Type"))

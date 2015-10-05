@@ -40,15 +40,14 @@ Bootstrap_Sim_Fn = function( inputlist ){
   Lines = Lines[ (grep("#_expected values with no error added ",Lines)+1):grep("ENDDATA",Lines)]
   writeLines(text=Lines, con=paste0(RepFile,Starter[['datfile']]))
 
-  # Stop if running for first time
-  if (is.null(Index_Bootstrap_Linenums)){
-    print("Stop and inspect bootstrap datfile for linenums")
-    return()
-  }
-
   # Simulate new indices
   Lines = readLines( paste0(RepFile,Starter[['datfile']]) )
-  for(i in Index_Bootstrap_Linenums){
+  indexstartline <- grep("#_year month index obs err", Lines) + 1
+  indexendline <- grep("#_N_fleets_with_discard", Lines) - 1
+  while (grepl("#$", Lines[indexendline])) {
+    indexendline <- indexendline - 1
+  }
+  for(i in indexstartline:indexendline){
     NewLine = as.numeric(strsplit( Lines[i]," ")[[1]][1:5])
     NewLine[4] = rlnorm(1, meanlog=log(NewLine[4]), sdlog=NewLine[5])
     Lines[i] = paste(NewLine, collapse=" ")
