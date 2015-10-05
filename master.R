@@ -66,11 +66,17 @@ source("Generate_species.R")
 # Read results
 ###############################################################################
 resdf <- get_all(dirroot = RootFile, pattern = basename(DateFile))
+# Calculate theta
+resdf$ESS1 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
+resdf$ESS2 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(nsamp)) + 1)))^(-1))
+# Save the results so that others in git can use them
 write.csv(resdf, file.path(ResultsFD, "resdf.csv"), row.names = FALSE)
 save(resdf, file = file.path(ResultsFD, "resdf.RData"))
 
 ###############################################################################
 # Plot results
 ###############################################################################
-#load(file.path(ResultsFD, "resdf.RData"))
+if (!exists("resdf")) {
+  load(file.path(ResultsFD, "resdf.RData"))
+}
 source("Plot.R")
