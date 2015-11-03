@@ -15,7 +15,7 @@ yearlyn <- c(25, 100, 400)
 
 # Levels of inflation for fishery and survey age composition samples
 inflationmatrix <- matrix(ncol = 2, byrow = FALSE,
-  c(1, 25, 100, 1000, rep(1, 4)))
+  c(1, 2, 5, 25, 100, 1000, rep(1, 6)))
 # Estimation matrix for fishery and survey age composition samples
 DM_data_matrix <- matrix(byrow = TRUE, nrow = 2,
   c(-1,0.001,0,0,1,1,
