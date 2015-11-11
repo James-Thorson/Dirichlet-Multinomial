@@ -10,33 +10,27 @@ gradientfilter <- 0.1
 ###############################################################################
 # Estimates of DM parameter 1
 ###############################################################################
-png(filename = paste0(ResultsFD, "/Combined_simulation_results.png"), res = resolution,
-  width = 6, height = 3*2, units="in")
-par( mfrow=c(2,1), mar=c(1,3,0.25,0.5), mgp=c(1.75,0.5,0), tck=-0.02,
-  oma = c(2, 0, 2.75, 0))
-# Panel 1 -- estimates of parameter
-boxplot(1/exp(lnEffN_mult_1) ~ Nfishery + ntrue,
-  data = droplevels(subset(resdf, Nfishery != 1 & gradient < gradientfilter)),
-  xlab = "", ylab = expression(theta),
-  # col = colors,
-  xaxt = "n")
-area <- par("usr")
-axisbot <- axis(1, at = seq(area[1] + area[2]/6, area[2] - area[2]/6,
-  length.out = length(yearlyn)), labels = rep("", length(yearlyn)))
-axistop <- axis(side = 3, at = 1:((NROW(inflationmatrix)-1)*length(yearlyn)),
-  labels = rep(inflationmatrix[-1, 1], length(yearlyn)), cex.axis = .6)
-# Panel 2 --
-boxplot(ESS2 ~ Nfishery + ntrue,
-        data = droplevels(subset(resdf, Nfishery != 1 & gradient < gradientfilter)),
-  xlab = "", ylab = expression(N[eff]),
-  # col = colors,
-  xaxt = "n")
-axis(1, at = axisbot, labels = yearlyn)
-axis(3, at = axistop, labels = rep("", length(axistop)))
-# legend("topleft", legend = levels(resdf$Nfishery)[-1], fill = colors,
-#   bty = "n", title = "Inflation factor", pch = letters[1:3])
-mtext( side=1, outer=FALSE, line=1.75, text="True annual sample size")
-mtext( side=3, outer=TRUE, line=1.75, text="Inflation factor")
+DF = droplevels(subset(resdf, !(Nfishery%in%c(1,1000)) & gradient<gradientfilter) )
+
+png(filename=paste0(ResultsFD,"/Combined_simulation_results.png"), res=resolution, width=6.5, height=2.5*2, units="in")
+  par(mfcol=c(2,3), mar=c(0,0,0.25,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(3,3.5,3,0))
+  for(j in 1:3){
+    Which = which(DF$ntrue==sort(unique(DF$ntrue))[j])
+    boxplot( 1/exp(lnEffN_mult_1) ~ Nfishery, data=DF[Which,], ylim=c(0.1,2000), log="y", xaxt="n", yaxt="n" )
+    mtext(side=3, text=sort(unique(DF$ntrue))[j])
+    if(j==1){
+      axis(2)
+      mtext(side=2, text=expression(theta), line=1.75)
+    }
+    boxplot( ESS3 ~ Nfishery, data=DF[Which,], ylim=c(15,500), log="y", yaxt="n" )
+    abline( h=sort(unique(DF$ntrue))[j], lty="dotted", lwd=3)
+    if(j==1){
+      axis(2)
+      mtext(side=2, text=expression(N[eff]), line=1.75)
+    }
+  }
+  mtext(side=3, outer=TRUE, line=1.75, text="True annual sample size")
+  mtext(side=1, outer=TRUE, line=1.75, text="Inflation factor")
 dev.off()
 
 ###############################################################################
@@ -45,15 +39,15 @@ dev.off()
 library(ggplot2)
 levels(resdf$model) = c("tuned","unweighted","DM")
 png(filename = paste0(ResultsFD, "/R0andM_inflation.png"), res = resolution,
-    width = 1.9*4, height = 1.9*3, units="in")
+    width = 1.9*5, height = 1.9*3, units="in")
 par( mar=c(3,3,0.5,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(0,0,0,0))
-means <- aggregate(gradient ~ model + Nfishery, data = resdf, mean)
+means <- aggregate(gradient ~ model + Nfishery, data = droplevels(subset(resdf,!(Nfishery%in%c(1000)))), mean)
 means$gradient <- round(means$gradient, 4)
 lengths <- aggregate(gradient ~ model + Nfishery,
-  data = subset(resdf, gradient < gradientfilter), length)
-lengths$label <- paste0("(", letters[1:NROW(means)], ") ", lengths$gradient)
+  data = subset(resdf, gradient < gradientfilter & !(Nfishery%in%c(1000))), length)
+lengths$label <- paste0("     (", letters[1:NROW(means)], ") ", lengths$gradient)
 letterlab <- means
-ggplot(subset(resdf, gradient < gradientfilter),
+ggplot(subset(resdf, gradient < gradientfilter & !(Nfishery%in%c(1000))),
        aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE)) +
   geom_point(aes(SR_LNR0_RE, NatM_p_1_Fem_GP_1_RE, color = factor(ntrue))) +
   facet_grid(model ~ Nfishery) +

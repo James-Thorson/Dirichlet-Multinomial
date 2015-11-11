@@ -64,11 +64,16 @@ source("Generate_species.R")
 
 ###############################################################################
 # Read results
+# Nfishery -- variance inflation (theta_sim)
+# lnEffN_mult_1 -- estimated variance inflation coefficient (theta_hat)
+# ntrue -- true sample size
+# nobs -- observed sample size (ntrue * Nfishery)
+# ESS3 -- corrected effective sample size
 ###############################################################################
 resdf <- get_all(dirroot = RootFile, pattern = basename(DateFile))
+resdf$nobs <- with(resdf, ntrue*as.numeric(as.character(Nfishery)) )
 # Calculate theta
-resdf$ESS1 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) + 1)))^(-1))
-resdf$ESS2 <- with(resdf, ((1/nsamp) + (1/(exp(lnEffN_mult_1) * as.numeric(as.character(nsamp)) + 1)))^(-1))
+resdf$ESS3 <- with(resdf, ((1/nobs) + (1/(exp(lnEffN_mult_1)*nobs + 1)))^(-1))
 # Save the results so that others in git can use them
 write.csv(resdf, file.path(ResultsFD, "resdf.csv"), row.names = FALSE)
 save(resdf, file = file.path(ResultsFD, "resdf.RData"))
