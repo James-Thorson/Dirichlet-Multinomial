@@ -12,7 +12,7 @@ gradientfilter <- 0.1
 ###############################################################################
 DF = droplevels(subset(resdf, !(Nfishery%in%c(1,1000)) & gradient<gradientfilter) )
 
-png(filename=paste0(ResultsFD,"/Combined_simulation_results.png"), res=resolution, width=6.5, height=2.5*2, units="in")
+save_fig(filename=paste0(ResultsFD,"/Combined_simulation_results"), res=c(resolution,600), width=6.5, height=2.5*2, type=c("png","tif"), FUN=function(){
   par(mfcol=c(2,3), mar=c(0,0,0.25,0.5), mgp=c(1.75,0.5,0), tck=-0.02, oma=c(3,3.5,3,0))
   for(j in 1:3){
     Which = which(DF$ntrue==sort(unique(DF$ntrue))[j])
@@ -31,7 +31,7 @@ png(filename=paste0(ResultsFD,"/Combined_simulation_results.png"), res=resolutio
   }
   mtext(side=3, outer=TRUE, line=1.75, text="True annual sample size")
   mtext(side=1, outer=TRUE, line=1.75, text="Inflation factor")
-dev.off()
+})
 
 ###############################################################################
 # Correlated error in R_0 and M
