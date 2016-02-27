@@ -1,0 +1,8 @@
+############ 
+# NOTES
+############
+
+# This version is from: C:\Users\James.Thorson\Desktop\UW Hideaway\Collaborations\2015 -- Dirichlet-Multinomial\Version 3.30\TPL\Thorson_build_from_2016-02-27
+
+# 22549
+# 22649
