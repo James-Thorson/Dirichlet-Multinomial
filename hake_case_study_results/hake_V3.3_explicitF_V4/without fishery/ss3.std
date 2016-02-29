@@ -2,38 +2,38 @@
      1   MGparm[1]          2.0023e-001 1.8307e-002
      2   SR_parm[1]         1.4849e+001 2.2960e-001
      3   SR_parm[2]         8.4853e-001 1.0836e-001
-     4   recdev_early       -7.9959e-002 1.3482e+000
+     4   recdev_early       -7.9963e-002 1.3482e+000
      5   recdev_early       -1.8842e-002 1.3870e+000
-     6   recdev_early       -2.2924e-002 1.3843e+000
-     7   recdev_early       -2.7866e-002 1.3810e+000
-     8   recdev_early       -3.3838e-002 1.3770e+000
-     9   recdev_early       -4.1043e-002 1.3723e+000
-    10   recdev_early       -4.9682e-002 1.3667e+000
-    11   recdev_early       -6.0175e-002 1.3600e+000
+     6   recdev_early       -2.2925e-002 1.3843e+000
+     7   recdev_early       -2.7867e-002 1.3810e+000
+     8   recdev_early       -3.3840e-002 1.3770e+000
+     9   recdev_early       -4.1046e-002 1.3723e+000
+    10   recdev_early       -4.9681e-002 1.3667e+000
+    11   recdev_early       -6.0170e-002 1.3600e+000
     12   recdev_early       -7.2572e-002 1.3522e+000
-    13   recdev_early       -8.6844e-002 1.3434e+000
-    14   recdev_early       -1.0359e-001 1.3332e+000
+    13   recdev_early       -8.6846e-002 1.3434e+000
+    14   recdev_early       -1.0358e-001 1.3332e+000
     15   recdev_early       -1.2260e-001 1.3219e+000
     16   recdev_early       -1.4368e-001 1.3095e+000
     17   recdev_early       -1.6691e-001 1.2962e+000
     18   recdev_early       -1.9140e-001 1.2823e+000
-    19   recdev_early       -2.1490e-001 1.2686e+000
-    20   recdev_early       -2.3726e-001 1.2549e+000
+    19   recdev_early       -2.1489e-001 1.2686e+000
+    20   recdev_early       -2.3727e-001 1.2549e+000
     21   recdev_early       -2.5827e-001 1.2413e+000
-    22   recdev_early       -2.7516e-001 1.2269e+000
+    22   recdev_early       -2.7515e-001 1.2269e+000
     23   recdev_early       -2.8272e-001 1.2146e+000
     24   recdev_early       -2.1930e-001 1.2315e+000
     25   recdev_early       -7.0079e-002 1.2373e+000
-    26   recdev_early       -4.7072e-002 1.2467e+000
-    27   recdev_early       2.8108e-002 1.2941e+000
+    26   recdev_early       -4.7069e-002 1.2467e+000
+    27   recdev_early       2.8110e-002 1.2941e+000
     28   recdev1            6.6457e-001 1.0772e+000
-    29   recdev1            -8.0037e-002 1.2523e+000
-    30   recdev1            -1.3880e-001 1.1952e+000
+    29   recdev1            -8.0038e-002 1.2523e+000
+    30   recdev1            -1.3879e-001 1.1952e+000
     31   recdev1            6.8242e-001 9.0522e-001
     32   recdev1            -2.7497e-001 1.1612e+000
     33   recdev1            -2.4190e-001 1.0934e+000
     34   recdev1            -3.1198e-001 1.1493e+000
-    35   recdev1            6.7648e-001 8.7651e-001
+    35   recdev1            6.7648e-001 8.7650e-001
     36   recdev1            -3.3493e-001 1.1802e+000
     37   recdev1            -2.0785e-001 1.1494e+000
     38   recdev1            1.7923e+000 5.2613e-001
@@ -42,7 +42,7 @@
     41   recdev1            -5.9256e-001 1.0621e+000
     42   recdev1            2.2495e+000 2.9241e-001
     43   recdev1            -9.1894e-001 1.0130e+000
-    44   recdev1            -1.0607e+000 9.6964e-001
+    44   recdev1            -1.0606e+000 9.6964e-001
     45   recdev1            1.4849e+000 3.3051e-001
     46   recdev1            -3.8373e-001 8.8261e-001
     47   recdev1            -1.4283e+000 8.7449e-001
@@ -68,8 +68,8 @@
     67   recdev1            2.8467e-001 3.5334e-001
     68   recdev1            2.3090e+000 2.8919e-001
     69   Fcast_recruitments -7.7048e-001 7.8069e-001
-    70   Fcast_recruitments -6.5097e-003 1.3653e+000
-    71   Fcast_recruitments -6.8595e-003 1.3945e+000
+    70   Fcast_recruitments -6.5088e-003 1.3653e+000
+    71   Fcast_recruitments -6.8551e-003 1.3945e+000
     72   Fcast_recruitments 0.0000e+000 1.4000e+000
     73   Fcast_recruitments 0.0000e+000 1.4000e+000
     74   Fcast_recruitments 0.0000e+000 1.4000e+000
@@ -78,140 +78,140 @@
     77   selparm[3]         1.5676e+000 2.4335e+000
     78   selparm[4]         1.4831e+000 1.0646e+000
     79   selparm[5]         2.8462e-001 9.2242e-001
-    80   selparm[6]         3.2549e-001 9.4612e-001
-    81   selparm[7]         -7.8802e-002 5.9900e-001
+    80   selparm[6]         3.2548e-001 9.4612e-001
+    81   selparm[7]         -7.8801e-002 5.9900e-001
     82   selparm[25]        4.9899e-001 2.2146e-001
     83   selparm[26]        -9.5915e-002 2.6456e-001
     84   selparm[27]        -1.0748e-001 2.8330e-001
     85   selparm[28]        5.3804e-001 2.7066e-001
-    86   selparm_dev        7.7176e-006 1.3416e-002
-    87   selparm_dev        -1.6538e-006 1.3416e-002
-    88   selparm_dev        -2.5413e-006 1.3417e-002
-    89   selparm_dev        1.2284e-005 1.3416e-002
-    90   selparm_dev        4.8633e-006 1.3416e-002
-    91   selparm_dev        1.2560e-006 1.3416e-002
-    92   selparm_dev        3.8108e-006 1.3416e-002
-    93   selparm_dev        1.3295e-006 1.3416e-002
-    94   selparm_dev        7.9046e-006 1.3416e-002
-    95   selparm_dev        4.2340e-005 1.3415e-002
-    96   selparm_dev        -2.6722e-006 1.3417e-002
-    97   selparm_dev        -3.6051e-007 1.3416e-002
-    98   selparm_dev        -2.6546e-006 1.3417e-002
-    99   selparm_dev        2.3817e-006 1.3416e-002
-   100   selparm_dev        -9.1728e-006 1.3417e-002
-   101   selparm_dev        6.0774e-006 1.3416e-002
-   102   selparm_dev        3.7805e-006 1.3416e-002
-   103   selparm_dev        -1.4813e-005 1.3417e-002
-   104   selparm_dev        3.8609e-005 1.3415e-002
-   105   selparm_dev        2.0754e-005 1.3416e-002
-   106   selparm_dev        4.8589e-005 1.3414e-002
-   107   selparm_dev        -3.6581e-006 1.3417e-002
-   108   selparm_dev        1.6148e-006 1.3416e-002
-   109   selparm_dev        4.3813e-006 1.3416e-002
-   110   selparm_dev        -1.9823e-005 1.3417e-002
-   111   selparm_dev        4.4764e-005 1.3412e-002
-   112   selparm_dev        -3.4149e-006 1.3416e-002
-   113   selparm_dev        -5.2648e-006 1.3417e-002
-   114   selparm_dev        8.9774e-005 1.3412e-002
-   115   selparm_dev        -7.5374e-005 1.3416e-002
-   116   selparm_dev        2.2937e-005 1.3415e-002
-   117   selparm_dev        5.7714e-005 1.3412e-002
-   118   selparm_dev        -3.6479e-005 1.3416e-002
-   119   selparm_dev        8.2481e-005 1.3411e-002
-   120   selparm_dev        1.2965e-004 1.3407e-002
-   121   selparm_dev        -3.8544e-006 1.3417e-002
-   122   selparm_dev        1.7205e-005 1.3415e-002
-   123   selparm_dev        -1.6790e-005 1.3417e-002
-   124   selparm_dev        -5.2516e-005 1.3418e-002
-   125   selparm_dev        -5.6612e-005 1.3419e-002
-   126   selparm_dev        6.0147e-005 1.3408e-002
-   127   selparm_dev        3.9789e-006 1.3414e-002
-   128   selparm_dev        1.5086e-005 1.3416e-002
+    86   selparm_dev        7.7003e-006 1.3416e-002
+    87   selparm_dev        -1.6319e-006 1.3416e-002
+    88   selparm_dev        -2.6121e-006 1.3417e-002
+    89   selparm_dev        1.2301e-005 1.3416e-002
+    90   selparm_dev        4.8820e-006 1.3416e-002
+    91   selparm_dev        1.2199e-006 1.3416e-002
+    92   selparm_dev        3.8033e-006 1.3416e-002
+    93   selparm_dev        1.2735e-006 1.3416e-002
+    94   selparm_dev        7.9406e-006 1.3416e-002
+    95   selparm_dev        4.2347e-005 1.3415e-002
+    96   selparm_dev        -2.6678e-006 1.3417e-002
+    97   selparm_dev        -3.4501e-007 1.3416e-002
+    98   selparm_dev        -2.6576e-006 1.3417e-002
+    99   selparm_dev        2.3611e-006 1.3416e-002
+   100   selparm_dev        -9.1664e-006 1.3417e-002
+   101   selparm_dev        6.0739e-006 1.3416e-002
+   102   selparm_dev        3.7558e-006 1.3416e-002
+   103   selparm_dev        -1.4796e-005 1.3417e-002
+   104   selparm_dev        3.8610e-005 1.3415e-002
+   105   selparm_dev        2.0774e-005 1.3416e-002
+   106   selparm_dev        4.8585e-005 1.3414e-002
+   107   selparm_dev        -3.6245e-006 1.3417e-002
+   108   selparm_dev        1.6874e-006 1.3416e-002
+   109   selparm_dev        4.3699e-006 1.3416e-002
+   110   selparm_dev        -1.9810e-005 1.3417e-002
+   111   selparm_dev        4.4751e-005 1.3412e-002
+   112   selparm_dev        -3.4645e-006 1.3416e-002
+   113   selparm_dev        -5.2950e-006 1.3417e-002
+   114   selparm_dev        8.9766e-005 1.3412e-002
+   115   selparm_dev        -7.5439e-005 1.3416e-002
+   116   selparm_dev        2.2943e-005 1.3415e-002
+   117   selparm_dev        5.7704e-005 1.3412e-002
+   118   selparm_dev        -3.6510e-005 1.3416e-002
+   119   selparm_dev        8.2466e-005 1.3411e-002
+   120   selparm_dev        1.2966e-004 1.3407e-002
+   121   selparm_dev        -3.8461e-006 1.3417e-002
+   122   selparm_dev        1.7224e-005 1.3415e-002
+   123   selparm_dev        -1.6772e-005 1.3417e-002
+   124   selparm_dev        -5.2515e-005 1.3418e-002
+   125   selparm_dev        -5.6618e-005 1.3419e-002
+   126   selparm_dev        6.0148e-005 1.3408e-002
+   127   selparm_dev        3.9760e-006 1.3414e-002
+   128   selparm_dev        1.5089e-005 1.3416e-002
    129   selparm_dev        3.5817e-004 1.3398e-002
    130   selparm_dev        5.0301e-005 1.3413e-002
-   131   selparm_dev        -1.1962e-004 1.3407e-002
-   132   selparm_dev        -9.2286e-008 1.3416e-002
-   133   selparm_dev        6.8924e-006 1.3415e-002
-   134   selparm_dev        -1.2693e-004 1.3417e-002
-   135   selparm_dev        -3.3337e-005 1.3415e-002
+   131   selparm_dev        -1.1961e-004 1.3407e-002
+   132   selparm_dev        -9.8312e-008 1.3416e-002
+   133   selparm_dev        6.8707e-006 1.3415e-002
+   134   selparm_dev        -1.2692e-004 1.3417e-002
+   135   selparm_dev        -3.3357e-005 1.3415e-002
    136   selparm_dev        1.0916e-004 1.3406e-002
-   137   selparm_dev        -3.8538e-005 1.3417e-002
+   137   selparm_dev        -3.8506e-005 1.3417e-002
    138   selparm_dev        4.0006e-005 1.3414e-002
-   139   selparm_dev        -1.2647e-004 1.3404e-002
-   140   selparm_dev        -7.6160e-005 1.3410e-002
-   141   selparm_dev        5.1375e-005 1.3406e-002
+   139   selparm_dev        -1.2644e-004 1.3404e-002
+   140   selparm_dev        -7.6145e-005 1.3410e-002
+   141   selparm_dev        5.1376e-005 1.3406e-002
    142   selparm_dev        5.0585e-004 1.3393e-002
-   143   selparm_dev        8.0856e-005 1.3409e-002
-   144   selparm_dev        1.4329e-004 1.3406e-002
-   145   selparm_dev        2.9576e-005 1.3405e-002
-   146   selparm_dev        1.7075e-005 1.3415e-002
-   147   selparm_dev        1.3284e-004 1.3408e-002
+   143   selparm_dev        8.0872e-005 1.3409e-002
+   144   selparm_dev        1.4328e-004 1.3406e-002
+   145   selparm_dev        2.9571e-005 1.3405e-002
+   146   selparm_dev        1.7055e-005 1.3415e-002
+   147   selparm_dev        1.3283e-004 1.3408e-002
    148   selparm_dev        -1.7367e-004 1.3423e-002
    149   selparm_dev        -1.0511e-003 1.3448e-002
-   150   selparm_dev        -1.4496e-004 1.3419e-002
+   150   selparm_dev        -1.4495e-004 1.3419e-002
    151   selparm_dev        5.3627e-004 1.3371e-002
-   152   selparm_dev        8.0521e-006 1.3408e-002
-   153   selparm_dev        2.9994e-004 1.3402e-002
-   154   selparm_dev        -3.5991e-005 1.3400e-002
-   155   selparm_dev        -2.6899e-004 1.3409e-002
-   156   selparm_dev        -7.5523e-005 1.3406e-002
-   157   selparm_dev        9.5354e-006 1.3414e-002
-   158   selparm_dev        1.1228e-005 1.3404e-002
-   159   selparm_dev        -9.0022e-005 1.3415e-002
-   160   selparm_dev        4.0059e-005 1.3407e-002
+   152   selparm_dev        8.0539e-006 1.3408e-002
+   153   selparm_dev        2.9995e-004 1.3402e-002
+   154   selparm_dev        -3.5996e-005 1.3400e-002
+   155   selparm_dev        -2.6900e-004 1.3409e-002
+   156   selparm_dev        -7.5524e-005 1.3406e-002
+   157   selparm_dev        9.5525e-006 1.3414e-002
+   158   selparm_dev        1.1210e-005 1.3404e-002
+   159   selparm_dev        -8.9983e-005 1.3415e-002
+   160   selparm_dev        4.0053e-005 1.3407e-002
    161   selparm_dev        3.0431e-004 1.3402e-002
-   162   selparm_dev        8.8373e-005 1.3412e-002
-   163   selparm_dev        -2.2066e-004 1.3405e-002
+   162   selparm_dev        8.8380e-005 1.3412e-002
+   163   selparm_dev        -2.2068e-004 1.3405e-002
    164   selparm_dev        -2.2112e-004 1.3394e-002
-   165   selparm_dev        9.0599e-005 1.3401e-002
+   165   selparm_dev        9.0597e-005 1.3401e-002
    166   selparm_dev        7.0649e-004 1.3384e-002
-   167   selparm_dev        6.5933e-004 1.3397e-002
-   168   selparm_dev        3.7501e-005 1.3406e-002
-   169   selparm_dev        2.8124e-005 1.3406e-002
-   170   selparm_dev        -1.4998e-005 1.3405e-002
+   167   selparm_dev        6.5931e-004 1.3397e-002
+   168   selparm_dev        3.7508e-005 1.3406e-002
+   169   selparm_dev        2.8099e-005 1.3406e-002
+   170   selparm_dev        -1.4986e-005 1.3405e-002
    171   selparm_dev        1.6851e-004 1.3405e-002
-   172   selparm_dev        2.4353e-005 1.3409e-002
+   172   selparm_dev        2.4358e-005 1.3409e-002
    173   selparm_dev        -1.2488e-003 1.3451e-002
    174   selparm_dev        -9.6539e-004 1.3419e-002
    175   selparm_dev        4.0949e-004 1.3375e-002
-   176   selparm_dev        9.4718e-006 1.3397e-002
+   176   selparm_dev        9.4742e-006 1.3397e-002
    177   selparm_dev        2.3882e-004 1.3400e-002
-   178   selparm_dev        -8.9090e-005 1.3400e-002
+   178   selparm_dev        -8.9086e-005 1.3400e-002
    179   selparm_dev        -7.0293e-004 1.3391e-002
    180   selparm_dev        -9.7561e-005 1.3407e-002
-   181   selparm_dev        4.5321e-005 1.3410e-002
-   182   selparm_dev        -5.1651e-005 1.3405e-002
+   181   selparm_dev        4.5320e-005 1.3410e-002
+   182   selparm_dev        -5.1634e-005 1.3405e-002
    183   selparm_dev        1.8209e-004 1.3404e-002
-   184   selparm_dev        -2.5118e-005 1.3408e-002
-   185   selparm_dev        9.4472e-005 1.3406e-002
+   184   selparm_dev        -2.5106e-005 1.3408e-002
+   185   selparm_dev        9.4476e-005 1.3406e-002
    186   selparm_dev        2.8909e-004 1.3404e-002
-   187   selparm_dev        4.1434e-005 1.3402e-002
-   188   selparm_dev        -3.7542e-004 1.3394e-002
-   189   selparm_dev        -4.5943e-005 1.3398e-002
-   190   selparm_dev        7.6653e-004 1.3394e-002
-   191   selparm_dev        8.2428e-004 1.3401e-002
+   187   selparm_dev        4.1441e-005 1.3402e-002
+   188   selparm_dev        -3.7543e-004 1.3394e-002
+   189   selparm_dev        -4.5939e-005 1.3398e-002
+   190   selparm_dev        7.6652e-004 1.3394e-002
+   191   selparm_dev        8.2429e-004 1.3401e-002
    192   selparm_dev        4.9518e-004 1.3410e-002
-   193   selparm_dev        -4.9759e-005 1.3406e-002
-   194   selparm_dev        1.5561e-005 1.3409e-002
-   195   selparm_dev        3.4608e-004 1.3408e-002
-   196   selparm_dev        6.2414e-005 1.3405e-002
+   193   selparm_dev        -4.9728e-005 1.3406e-002
+   194   selparm_dev        1.5549e-005 1.3409e-002
+   195   selparm_dev        3.4607e-004 1.3408e-002
+   196   selparm_dev        6.2408e-005 1.3405e-002
    197   selparm_dev        -1.0380e-003 1.3415e-002
    198   selparm_dev        -1.1165e-003 1.3417e-002
    199   selparm_dev        1.9960e-005 1.3358e-002
-   200   selparm_dev        -5.3595e-005 1.3398e-002
+   200   selparm_dev        -5.3599e-005 1.3398e-002
    201   selparm_dev        -8.3289e-004 1.3377e-002
-   202   selparm_dev        -9.3469e-005 1.3399e-002
+   202   selparm_dev        -9.3466e-005 1.3399e-002
    203   selparm_dev        -6.9516e-004 1.3390e-002
-   204   selparm_dev        -1.1727e-004 1.3407e-002
-   205   selparm_dev        5.4196e-005 1.3412e-002
+   204   selparm_dev        -1.1728e-004 1.3407e-002
+   205   selparm_dev        5.4197e-005 1.3412e-002
    206   SPB_std            5.3219e+006 8.0867e+005
    207   SPB_std            5.3219e+006 8.0867e+005
    208   SPB_std            4.5901e+006 1.6340e+006
-   209   SPB_std            4.3849e+006 1.5674e+006
+   209   SPB_std            4.3848e+006 1.5674e+006
    210   SPB_std            4.1141e+006 1.5034e+006
    211   SPB_std            3.9480e+006 1.4406e+006
    212   SPB_std            3.7258e+006 1.3766e+006
-   213   SPB_std            3.4512e+006 1.3095e+006
+   213   SPB_std            3.4511e+006 1.3095e+006
    214   SPB_std            3.3327e+006 1.2652e+006
    215   SPB_std            3.2311e+006 1.2387e+006
    216   SPB_std            3.0254e+006 1.2015e+006
@@ -257,7 +257,7 @@
    256   SPB_std            2.4692e+006 8.7237e+005
    257   SPB_std            2.5251e+006 9.8356e+005
    258   SPB_std            2.2940e+006 9.6704e+005
-   259   SPB_std            2.1895e+006 9.9214e+005
+   259   SPB_std            2.1895e+006 9.9215e+005
    260   recr_std           2.8099e+006 6.4515e+005
    261   recr_std           2.8099e+006 6.4515e+005
    262   recr_std           1.9439e+006 2.4373e+006
@@ -273,7 +273,7 @@
    272   recr_std           8.3995e+005 1.0065e+006
    273   recr_std           2.2435e+006 2.0531e+006
    274   recr_std           8.1112e+005 9.9363e+005
-   275   recr_std           9.1881e+005 1.0976e+006
+   275   recr_std           9.1880e+005 1.0976e+006
    276   recr_std           6.7685e+006 3.6769e+006
    277   recr_std           6.8619e+005 7.9394e+005
    278   recr_std           5.8177e+005 6.4768e+005
@@ -305,7 +305,7 @@
    304   recr_std           4.2817e+006 1.1958e+006
    305   recr_std           1.2775e+006 4.9145e+005
    306   recr_std           1.0004e+007 3.3803e+006
-   307   recr_std           4.7276e+005 3.7997e+005
+   307   recr_std           4.7277e+005 3.7997e+005
    308   recr_std           1.6622e+006 2.3009e+006
    309   recr_std           2.6316e+006 3.7177e+006
    310   recr_std           2.6722e+006 3.7898e+006
@@ -401,7 +401,7 @@
    400   F_std              1.9449e-001 5.2865e-002
    401   F_std              1.9612e-001 5.3251e-002
    402   F_std              6.8930e-002 1.2786e-002
-   403   F_std              8.0819e-002 1.4555e-002
+   403   F_std              8.0818e-002 1.4555e-002
    404   F_std              1.5155e-001 2.6610e-002
    405   F_std              2.0914e-001 4.0817e-002
    406   F_std              2.4214e-001 4.5920e-002
@@ -477,7 +477,7 @@
    476   Mgmt_quant         3.8708e+005 6.5605e+004
    477   Mgmt_quant         1.9796e+006 2.7511e+005
    478   Mgmt_quant         1.9309e-001 1.7359e-002
-   479   Mgmt_quant         3.9717e+005 6.7016e+004
+   479   Mgmt_quant         3.9717e+005 6.7017e+004
    480   Mgmt_quant         1.2621e+006 3.8201e+005
    481   Mgmt_quant         2.7119e-001 7.4687e-002
    482   Mgmt_quant         3.2088e-001 1.0898e-001

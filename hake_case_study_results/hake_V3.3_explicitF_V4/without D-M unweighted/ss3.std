@@ -86,7 +86,7 @@
     85   selparm[28]        3.8910e-001 1.9281e-001
     86   selparm_dev        3.4308e-004 1.3390e-002
     87   selparm_dev        -1.4376e-005 1.3416e-002
-    88   selparm_dev        5.5021e-007 1.3416e-002
+    88   selparm_dev        5.5022e-007 1.3416e-002
     89   selparm_dev        4.5896e-004 1.3382e-002
     90   selparm_dev        4.1248e-004 1.3393e-002
     91   selparm_dev        3.5143e-004 1.3399e-002
@@ -96,9 +96,9 @@
     95   selparm_dev        5.1761e-003 1.3085e-002
     96   selparm_dev        5.3152e-005 1.3412e-002
     97   selparm_dev        5.6998e-005 1.3407e-002
-    98   selparm_dev        -1.9910e-006 1.3416e-002
+    98   selparm_dev        -1.9911e-006 1.3416e-002
     99   selparm_dev        2.7635e-004 1.3383e-002
-   100   selparm_dev        6.0324e-006 1.3416e-002
+   100   selparm_dev        6.0325e-006 1.3416e-002
    101   selparm_dev        -2.7910e-004 1.3314e-002
    102   selparm_dev        1.3744e-003 1.3313e-002
    103   selparm_dev        -1.9807e-005 1.3417e-002
