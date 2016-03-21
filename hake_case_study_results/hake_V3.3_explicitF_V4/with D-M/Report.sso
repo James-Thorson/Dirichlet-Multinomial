@@ -1,8 +1,8 @@
 #V3.30a
 SS-V3.30a-safe;_11/28/2014;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.1
 
-StartTime: Sun Feb 28 15:53:05 2016
-EndTime: Sun Feb 28 15:53:33 2016
+StartTime: Mon Mar 21 14:33:10 2016
+EndTime: Mon Mar 21 14:33:38 2016
 This run took: 0 hours, 0 minutes, 28 seconds.
 Data_File: hake_330.dat
 Control_File: hake_330.ctl
