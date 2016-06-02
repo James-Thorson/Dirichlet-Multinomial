@@ -13,20 +13,24 @@ RootFile = "C:/Users/James.Thorson/Desktop/Project_git/Dirichlet-Multinomial/hak
 
 RunFile = paste0(RootFile,"without fishery/")
   #STD_3 = read.table( paste0(RunFile,"ss3.std"), header=TRUE )
-  Output = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
-  STD_0 = Output$derived_quants
+  Output_0old = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
+  STD_0old = Output_0old$derived_quants
+RunFile = paste0(RootFile,"without fishery (fixed)/")
+  #STD_3 = read.table( paste0(RunFile,"ss3.std"), header=TRUE )
+  Output_0 = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
+  STD_0 = Output_0$derived_quants
 RunFile = paste0(RootFile,"without D-M unweighted/")
   #STD_0 = read.table( paste0(RunFile,"ss3.std"), header=TRUE )
-  Output = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
-  STD_1 = Output$derived_quants
+  Output_1 = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
+  STD_1 = Output_1$derived_quants
 RunFile = paste0(RootFile,"without D-M/")
   #STD_1 = read.table( paste0(RunFile,"ss3.std"), header=TRUE )
-  Output = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
-  STD_2 = Output$derived_quants
+  Output_2 = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
+  STD_2 = Output_2$derived_quants
 RunFile = paste0(RootFile,"with D-M/")
   #STD_2 = read.table( paste0(RunFile,"ss3.std"), header=TRUE )
-  Output = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
-  STD_3 = Output$derived_quants
+  Output_3 = SS_output(RunFile, covar=TRUE, forecast=TRUE, printstats=TRUE)
+  STD_3 = Output_3$derived_quants
 
 YearSet = 1967:2013
 save_fig( file=paste0(RootFile,"Comparison_with_hake"), width=6.5, height=6.5, res=c(200,600), type=c("png","tif"), FUN=function(){
@@ -49,3 +53,10 @@ save_fig( file=paste0(RootFile,"Comparison_with_hake"), width=6.5, height=6.5, r
   mtext(side=1, text="Year", outer=TRUE, line=2)
   mtext(side=2, text="Derived quantity", outer=TRUE, line=0)
 })
+
+# Comparison of likelihood components
+Output_0$likelihoods_raw_by_fleet
+Output_0$timeseries
+
+Output_0$parameters[,1:9]
+Output_0old$parameters[,1:9]
